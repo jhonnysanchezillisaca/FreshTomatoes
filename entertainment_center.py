@@ -1,8 +1,27 @@
+import json
 import media
 import fresh_tomatoes
+import requests
+
+
+urlApi = "https://www.omdbapi.com/?%s"
 
 
 # Creating movies
+title_movies = ["Django", "Toy Story", "Avatar", "School of Rock",
+                "Ratatouille", "Midnight in Paris", "Django"]
+movies = []
+
+for i in range(len(title_movies)):
+    search_by_title = {'t': title_movies[i]}
+    response = requests.get(urlApiT, search_by_title)
+    jData = json.loads(response.content)
+    movies.append(media.Movie(jData['Title'], jData['Plot'],
+                              jData['Poster'], ""))
+
+"""
+django = media.Movie(jData['Title'], jData['Plot'], jData['Poster'], "")
+
 toy_story = media.Movie("Toy Story",
                         "A story of a boy and his toys that come to life",
                         "http://cdn.collider.com/wp-content/uploads/toy-story-poster1.jpg",  # NOQA
@@ -29,6 +48,7 @@ midnight_in_paris = media.Movie("Midnight in Paris",
                                 "https://upload.wikimedia.org/wikipedia/en/9/9f/Midnight_in_Paris_Poster.jpg",  # NOQA
                                 "https://www.youtube.com/watch?v=dtiklALGz20")
 
-movies = [toy_story, avatar, school_of_rock, ratatouille, midnight_in_paris]
-
+movies = [toy_story, avatar, school_of_rock, ratatouille, midnight_in_paris,
+          django]
+"""
 fresh_tomatoes.open_movies_page(movies)
