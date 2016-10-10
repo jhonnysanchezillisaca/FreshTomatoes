@@ -17,6 +17,67 @@ main_page_head = '''
     <link rel="stylesheet" href="css/style.css">
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            padding-top: 80px;
+            background-color: #2d5e4b;
+        }
+        h2 {
+            color: #96A6A0;
+            font-family: sans-serif;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #57796C;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: #57796C;
+        }
+        .navbar {
+            background-color: #2d5e4b;
+        }
+        .container {
+            background-color: #2d5e4b;
+        }
+        .navbar-brand {
+            text-decoration: none;
+            font-size: 3em;
+            color: #96A6A0;
+        }
+        .navbar-header {
+            margin-bottom: 3em;
+        }
+
+    </style>
 
     <script type="text/javascript" charset="utf-8">
         // Pause the video when the modal is closed
